@@ -21,6 +21,7 @@ h3 {
   margin-top: 10px; }
 
 .button {
+  pointer: cursor;
   -webkit-appearance: none;
   border: none;
   height: 40px;
