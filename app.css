@@ -1,0 +1,221 @@
+body {
+  font-family: 'proxim-nova', sans-serif;
+  font-size: 16px;
+  overflow-x: hidden; }
+
+h1, h2, h3 {
+  margin: 0; }
+
+h1 {
+  font-weight: 400; }
+
+h2 {
+  font-size: 24px;
+  font-weight: 100;
+  text-align: center; }
+
+h3 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #BFBFBE;
+  margin-top: 10px; }
+
+.button {
+  border: none;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  text-decoration: none;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+  color: #fff;
+  background: #6ab9d4;
+  text-shadow: 0 1px 3px rgba(36, 180, 126, 0.4); }
+.button:hover {
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  -webkit-box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08); }
+
+.header {
+  padding: 1rem 0;
+  text-align: center; }
+.header h1 {
+  color: #000;
+  font-size: 1.5rem;
+  margin: 1rem 0; }
+.header p {
+  color: #666;
+  font-weight: 100; }
+
+.card-stack-wrapper {
+  opacity: 1; }
+.card-stack-wrapper.hidden {
+  opacity: 0;
+  transition: all 400ms ease;
+  display: none; }
+
+.card {
+  position: absolute; }
+
+.card-content {
+  color: #fff;
+  position: relative;
+  height: 100%; }
+.card-content img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+  display: block;
+  height: 70vh; }
+
+.card-footer {
+  border: solid 1px #ccc;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 1.5rem 1rem;
+  text-align: center; }
+.card-footer p {
+  font-size: 1.25rem;
+  margin: 0; }
+
+/* game controls */
+.game-controls {
+  padding-top: 30px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center; }
+
+.top-control, .right-control, .left-control {
+  border: solid 1px #ccc;
+  border-radius: 10px; }
+
+.right-control, .left-control, .top-control {
+  padding: 1rem 2rem;
+  margin: 0 .5rem;
+  width: 20%;
+  text-align: center; }
+
+.final-state.active {
+  display: block;
+  margin: 0 auto; }
+
+.final-state.hidden {
+  opacity: 0; }
+
+@media screen and (min-width: 800px) {
+  .header h1 {
+    font-weight: 100;
+    font-size: 2rem;
+    margin: 1rem 0; }
+
+  .card-stack-wrapper {
+    max-width: 500px;
+    margin: 0 auto; }
+
+  .card-footer h1 {
+    font-weight: 100;
+    font-size: 1.25rem;
+    margin: 0; } }
+.no-transition {
+  -webkit-transition: none !important;
+  transition: none !important; }
+
+.stackedcards-overflow {
+  overflow-y: hidden !important; }
+
+.stackedcards.init {
+  opacity: 0;
+  /* set the opacity to 0 if you want a fade-in effect to stacked cards on page load */ }
+
+.stackedcards {
+  position: relative; }
+
+.stackedcards * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.stackedcards--animatable {
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease; }
+
+.stackedcards .stackedcards-container > *, .stackedcards-overlay {
+  position: absolute;
+  width: 100%;
+  /* set 100% */
+  height: auto;
+  /* set 100% */
+  will-change: transform, opacity;
+  top: 0;
+  border-radius: 10px;
+  min-width: 265px; }
+
+.stackedcards-overlay.left > div, .stackedcards-overlay.right > div, .stackedcards-overlay.top > div {
+  width: 100%;
+  height: auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.stackedcards-overlay.left, .stackedcards-overlay.right, .stackedcards-overlay.top {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  top: 0;
+  height: auto; }
+
+.stackedcards-overlay.top, .stackedcards-overlay.right, .stackedcards-overlay.left {
+  background: #fff;
+  width: 100%;
+  height: 100%; }
+
+.stackedcards-overlay.left:empty, .stackedcards-overlay.right:empty, .stackedcards-overlay.top:empty {
+  display: none !important; }
+
+.stackedcards-overlay-hidden {
+  display: none; }
+
+.stackedcards-origin-bottom {
+  -webkit-transform-origin: bottom;
+  -ms-transform-origin: bottom;
+  transform-origin: bottom; }
+
+.stackedcards-origin-top {
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top; }
+
+.stackedcards-bottom, .stackedcards-top, .stackedcards-none {
+  background: #fff;
+  /* set card background background */
+  height: auto; }
+
+.stackedcards .stackedcards-container > :nth-child(1) {
+  position: relative;
+  display: block; }
+
+/*# sourceMappingURL=app.css.map */
