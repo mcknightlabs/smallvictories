@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var elTrans;
         var leftSFX = new Audio("media/sfx/click.wav"); // buffers automatically when created
         var rightSFX = new Audio("media/sfx/chime.wav"); // buffers automatically when created
+        var topSFX = new Audio("media/sfx/beep-up.wav"); // buffers automatically when created
     
         obj = document.getElementById('stacked-cards-block');
         stackedCardsObj = obj.querySelector('.stackedcards-container');
@@ -212,6 +213,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function rightSound(){
         rightSFX.play();
     }
+    function topSound(){
+        topSFX.play();
+    }
     
     //Swipe active card to left.
     function onSwipeLeft() {
@@ -249,6 +253,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
     //Swipe active card to top.
     function onSwipeTop() {
+      topSound();
       removeNoTransition();
       transformUi(0, -1000, 0, currentElementObj);
       if(useOverlays){
