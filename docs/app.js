@@ -215,38 +215,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
     //Swipe active card to left.
     function onSwipeLeft() {
-      removeNoTransition();
-      transformUi(-1000, 0, 0, currentElementObj);
-      if(useOverlays){
-        transformUi(-1000, 0, 0, leftObj); //Move leftOverlay
-        transformUi(-1000, 0, 0, topObj); //Move topOverlay
-        resetOverlayLeft();
-      }
-      currentPosition = currentPosition + 1;
-      updateUi();
-      currentElement();
-      leftSound();
-      changeStages();
-      setActiveHidden();
+        leftSound();
+        removeNoTransition();
+        transformUi(-1000, 0, 0, currentElementObj);
+        if(useOverlays){
+            transformUi(-1000, 0, 0, leftObj); //Move leftOverlay
+            transformUi(-1000, 0, 0, topObj); //Move topOverlay
+            resetOverlayLeft();
+        }
+        currentPosition = currentPosition + 1;
+        updateUi();
+        currentElement();
+        changeStages();
+        setActiveHidden();
     };
     
     //Swipe active card to right.
     function onSwipeRight() {
-      removeNoTransition();
-      transformUi(1000, 0, 0, currentElementObj);
-      if(useOverlays){
-        transformUi(1000, 0, 0, rightObj); //Move rightOverlay
-        transformUi(1000, 0, 0, topObj); //Move topOverlay
-        resetOverlayRight();
-      }
-  
-      currentPosition = currentPosition + 1;
-      updateUi();
-      currentElement();
-
-      rightSound();
-      changeStages();
-      setActiveHidden();
+        rightSound();
+        removeNoTransition();
+        transformUi(1000, 0, 0, currentElementObj);
+        if(useOverlays){
+            transformUi(1000, 0, 0, rightObj); //Move rightOverlay
+            transformUi(1000, 0, 0, topObj); //Move topOverlay
+            resetOverlayRight();
+        }
+        currentPosition = currentPosition + 1;
+        updateUi();
+        currentElement();
+        changeStages();
+        setActiveHidden();
     };
     
     //Swipe active card to top.
